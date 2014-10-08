@@ -8,6 +8,15 @@
   },
   "author": "Ryan Ramage",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ryanramage/holdjs.git"
+  },
+  "homepage": "https://github.com/ryanramage/holdjs",
+  "keywords": [
+    "hold",
+    "tale"
+  ],
   "dependencies": {
     "baudio": "^2.1.2",
     "inherits": "^2.0.1",

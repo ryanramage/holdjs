@@ -21,9 +21,6 @@ exports.verify_sig = function(msg, sig, publicExponent, modulus){
   var S = new bn(sig);
 
   var right = M.mod(n)
-  //var left = S.pow(e)
-  //return (right.equals(rolls));
-  //console.log(right.toString());
   var result = S.modPowInt(e, n);
   return result.equals(M);
 }
@@ -37,7 +34,7 @@ exports.sign_packet = function(digits) {
   return ['#2#',digits,'*'].join('')
 }
 
-exports.roll_d10_packet = function(num_dice) {
+exports.roll_packet = function(num_dice) {
   return ['#3#',num_dice,'*'].join('')
 }
 
@@ -53,13 +50,13 @@ exports.dial = function(packet){
 
 }
 
-exports.decrypt = function(ct, privateExponent, modulus) {
-  return (new bn(ct).modPowInt(new bn(privateExponent), new bn(modulus))).toString();
-}
+// exports.decrypt = function(ct, privateExponent, modulus) {
+//   return (new bn(ct).modPowInt(new bn(privateExponent), new bn(modulus))).toString();
+// }
 
-exports.sign_level = function(level, privateExponent, modulus){
-  return (new bn(level).modPowInt(new bn(privateExponent), new bn(modulus))).toString();
-}
+// exports.sign_level = function(level, privateExponent, modulus){
+//   return (new bn(level).modPowInt(new bn(privateExponent), new bn(modulus))).toString();
+// }
 
 
 
